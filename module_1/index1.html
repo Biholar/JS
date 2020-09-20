@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Практична робота_01-JS02</title>
+    <style>
+      h1{
+        font-size: 40px;
+      }
+      body {
+        margin: auto;
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background-color: #212121;
+        color: white;
+        
+      }
+
+      button {
+        font-size: 10pt;
+        background-color: #6bbeb8; 
+        height: 50px;
+        width: 100px;
+        text-align: center;
+        margin: 10px;
+        margin-right: 20px;
+      }
+
+      .content{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        height: 50px;
+        font-size: 20px;
+        font-weight: 500;
+       
+        margin: 10px;
+      }
+
+      .header{
+        height: 100px;
+        font-size: 50px;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        text-align: center;        
+        background-color: #0f0f0f;
+        margin: 0 auto;
+      }
+
+      .btns{
+        
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+      }
+
+     
+      
+    </style>
+  </head>
+  <body>
+    <div class="header"> Сторінка привітання <br /></div>
+    <div class="content">"Hello WORLD" </div> <br />
+    <div class = "btns">
+    <button value="Кнопка вітання">Hello</button>
+    <button  value="Clear" class="button" onclick="remove()">Clear </button>
+  </div> 
+
+    <script>
+      // Створення обробника події «кліку»
+      document.querySelector("button").onclick = myFunction;
+
+      function myFunction() {
+        // Директива повної відповідності сучасним стандартам ECMAScript
+        "use strict";
+        // Пошук селектора <button>
+        var myHeading = document.querySelector("button");
+        // Видалення  селектора <button> з потоку веб-сторінки
+        myHeading.style.display = "none";
+        // Створення елементу <h1>
+        var h1 = document.createElement("h1");
+        // Додавання до обєкту <h1> класу
+        h1.className = "big";
+        // Додавання до обєкту <h1> id
+        h1.id = "big";
+        // Додавання дочірнього елементу до DOM-вузла <body>
+        document.body.appendChild(h1);
+        // Створення текстового вузла
+        h1.appendChild(document.createTextNode("Я ВІТАЮ ТЕБЕ СВІТ!!!"));
+        // Застосування стилів до елементу <h1>
+        document.getElementsByTagName("h1")[0].style.color = "red";
+        document.getElementById("big").style.fontSize = "4em";
+        document.getElementById("big").style.textAlign = "center";
+      }
+
+      function remove() {
+        var elem = document.getElementById("big").lastChild;
+        elem.parentNode.removeChild(elem);
+        myHeading.style.display = block;
+
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Практична робота_01-JS01</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background-color: #212121;
+        color: white;
+      }
+      h1 {
+        font: Monaco, Courier, monospace 28px;
+        color: #618ad2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Підключення внутрішніх скриптів JavaScript</h1>
+    <p id="blinking">
+      Підключення скриптів можна виконувати різними способами. <br />
+      Один із способів полягає в описі скриптів прямо всередині HTML-сторінки.
+    </p>
+    <input type="button" id="button" value="Очистити" />
+    <script>
+        button.onclick = function() {
+        alert('Клик!');
+        }
+        var heading = document.querySelector("h1");
+        setInterval(function () {
+          var hue =
+            "rgb(" +
+            Math.floor(Math.random() * 256) +
+            "," +
+            Math.floor(Math.random() * 256) +
+            "," +
+            Math.floor(Math.random() * 256) +
+            ")";
+          heading.style.color = hue;
+        }, 1000);
+    </script>
+  </body>
+</html>
