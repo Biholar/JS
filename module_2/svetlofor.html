@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svetlofor</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="interactive">
+      <div class="img_box">
+        <img class="img" id="img" src="./img/red.png" alt="" />
+      </div>
+      <div class="buttons">
+        <button value="on" class="button" onclick="lights()">NEXT COLOR</button>
+        <script>
+          var myImage = document.querySelector("img");
+
+          function lights() {
+            var mySrc = myImage.getAttribute("src");
+            if (mySrc === "img/green.png") {
+              myImage.setAttribute("src", "img/red.png");
+            } else if (mySrc === "img/yellow.png") {
+              myImage.setAttribute("src", "img/green.png");
+            } else if (mySrc === "img/red.png") {
+              myImage.setAttribute("src", "img/yellow.png");
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

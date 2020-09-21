@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ligths</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="interactive">
+      <div class="img_box">
+        <img class="img" id="img" src="./img/lamp_off.png" alt="" />
+      </div>
+      <div class="buttons">
+        <button value="on" class="button" onclick="lights()">ON/OFF</button>
+        <script>
+          var myImage = document.querySelector("img");
+
+          function lights() {
+            var mySrc = myImage.getAttribute("src");
+            if (mySrc === "img/lamp_off.png") {
+              myImage.setAttribute("src", "img/lamp_on.png");
+            } else {
+              myImage.setAttribute("src", "img/lamp_off.png");
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

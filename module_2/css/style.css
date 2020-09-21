@@ -1,0 +1,34 @@
+body {
+  background-color: #212121;
+  display: flex;
+  margin: 25vh;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.interactive {
+  width: 300px;
+  display: block;
+  margin: auto;
+}
+.img_box {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+button {
+  background-color: #cfcfcf;
+  height: 50px;
+  width: 100px;
+}
+
+.buttons {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
