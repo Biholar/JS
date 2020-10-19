@@ -9,25 +9,28 @@
   <body>
     <div class="interactive">
       <div class="img_box">
-        <img class="img" id="img" src="./img/red.png" alt="" />
+        <img id="image" src="./img/red.png" />
       </div>
       <div class="buttons">
-        <button value="on" class="button" onclick="lights()">NEXT COLOR</button>
-        <script>
-          var myImage = document.querySelector("img");
-
-          function lights() {
-            var mySrc = myImage.getAttribute("src");
-            if (mySrc === "img/green.png") {
-              myImage.setAttribute("src", "img/red.png");
-            } else if (mySrc === "img/yellow.png") {
-              myImage.setAttribute("src", "img/green.png");
-            } else if (mySrc === "img/red.png") {
-              myImage.setAttribute("src", "img/yellow.png");
-            }
-          }
-        </script>
+        <button value="on" class="button" onclick="imgsrc()" ;>
+          NEXT COLOR
+        </button>
       </div>
+
+      <script>
+        var i = 0;
+        var image = document.getElementById("image");
+        var imgs = new Array(
+          "./img/red.png",
+          "./img/yellow.png",
+          "./img/green.png"
+        );
+        function imgsrc() {
+          i++;
+          i %= imgs.length;
+          image.src = imgs[i];
+        }
+      </script>
     </div>
   </body>
 </html>
