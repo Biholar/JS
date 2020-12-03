@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex1</title>
+  </head>
+  <body>
+    <h1>Furniture order</h1>
+    <form method="post" name="form">
+      <br />
+      <select name="product">
+        <option value="Wardrobe">Wardrobe</option>
+        <option value="Table">Table</option>
+        <option value="Sideboard">Sideboard</option>
+        <option value="Sofa">Sofa</option>
+        <option value="Commode">Commode</option>
+      </select>
+
+      <select name="material">
+        <option value="Oak">Oak</option>
+        <option value="Beech">Beech</option>
+        <option value="Maple">Maple</option>
+        <option value="Birch">Birch</option>
+        <option value="Nut_tree">Nut tree</option>
+      </select>
+      <br /><br />
+      <p>Amount:<input type="text" name="amount" /></p>
+      <br />
+      <input type="submit" value="Submit order" onclick="orderCheck()" />
+    </form>
+    <script>
+      function orderCheck() {
+        amount = document.form.amount.value;
+        st = "";
+        if (amount == "") st = "Number of products \n";
+        if (st == "") document.form.action = "ex1.php";
+        else {
+          str = "Enter: " + st;
+          alert(str);
+          return false;
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        background-color: #f291b5;
+      }
+
+      h1 {
+        color: #51268c;
+      }
+    </style>
+  </body>
+</html>

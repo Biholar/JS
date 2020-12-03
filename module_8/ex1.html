@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    </style>
+
+    <h1>Five events with a mouse</h1>
+    <p id="Text1" onclick="Scaling()">Click on me</p>
+    <p id="Text2" onmouseover="HoldOver()" onmousedown="HoldDown()" onmouseup="HoldUP()">
+      In this text, press, hold and release the left mouse button
+    </p>
+    <p id="Text3" onmouseover="HoverOver()" onmouseout="HoverOut()">
+      Slowly hover your mouse over this text
+    </p>
+
+    <script>
+      flag = true;
+      function Scaling() {
+        if (flag) {
+          flag = false;
+          document.getElementById("Text1").style.background = "blue";
+          document.getElementById("Text1").style.color = "white";
+          document.getElementById("Text1").style.fontSize = "50px";
+        } else {
+          document.getElementById("Text1").style.background = "white";
+          document.getElementById("Text1").style.color = "black";
+          document.getElementById("Text1").style.fontSize = "20px";
+          flag = true;
+        }
+      }
+      function HoldOver() {
+        document.getElementById("Text2").style.background = "green";
+      }
+      function HoldDown() {
+        document.getElementById("Text2").style.background = "green";
+      }
+      function HoldUP() {
+        document.getElementById("Text2").style.background = "yellow";
+      }
+      function HoverOver() {
+        document.getElementById("Text3").style.background = "red";
+      }
+      function HoverOut() {
+        document.getElementById("Text3").style.background = "blue";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="Body" onclick="rodEl(event)">
+    <style>
+      body {
+        background-color: #a7d9c1;
+        text-align: center;
+        margin: 150px auto;
+        max-width: fit-content;
+      }
+
+      #Rep_img {
+        text-align: right;
+        font-family: "Arial", sans-serif;
+        font-size: 30px;
+      }
+    </style>
+    <img id="img" src="Audi_green.jpg" alt="Audi_green" />
+    <p id="Rep_img">Green Car</p>
+
+    <script>
+      flag = 0;
+      function rodEl(event) {
+        id = event.target.id;
+        doc = document.getElementById(id);
+        switch (id) {
+          case "img":
+            doc.src = "Audi_red.jpg";
+            document.getElementById("Rep_img").innerHTML = "Red Car";
+            document.getElementById("Body").style.color = "red";
+            document.getElementById("Body").style.backgroundColor = "#0597F2";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

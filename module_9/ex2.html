@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex2</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css" />
+    <div class="content-container">
+      <div class="conent">
+        <h2>Select function</h2>
+        <p>The angle must be greater than 0 and less than 90 degrees</p>
+        <div class="separ"></div>
+        <p>Angle in degrees<input type="text" name="angle" /></p>
+        <p>Function</p>
+        <select name="type_f">
+          <option value="sin">Sinus</option>
+          <option value="cos">Cosine</option>
+          <option value="tan">Tangent</option>
+        </select>
+        <h3 id="output"></h3>
+        <br /><br />
+
+        <input
+          class="button"
+          onclick="Calculate()"
+          type="submit"
+          value="Calculate"
+          onclick="Check()"
+        />
+
+        <script>
+          function Calculate() {
+            a = document.all.angle.value;
+            rad = (a * Math.PI) / 180;
+            b = document.all.type_f.selectedIndex;
+            d = document.all.type_f.options[b].value;
+            st = "The angle must be greater than 0 and less than 90 degrees\n";
+            if (a < 0 || a > 90) {
+              alert(st);
+              return false;
+            } else {
+              f = "Math." + d + "(" + rad + ")";
+              document.all.output.innerHTML = d + "(" + a + ")=" + Math.round(eval(f) * 10) / 10;
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mod 2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function clock() {
+        var timeStr, dateStr;
+        now = new Date();
+        // час
+        hours = now.getHours();
+        minutes = now.getMinutes();
+        seconds = now.getSeconds();
+        timeStr = "" + hours;
+        timeStr += (minutes < 10 ? ":0" : ":") + minutes;
+        timeStr += (seconds < 10 ? ":0" : ":") + seconds;
+        document.clock.time.value = timeStr;
+        // дата
+        date = now.getDate();
+        month = now.getMonth() + 1;
+        year = now.getFullYear();
+
+        dateStr = (date < 10 ? "0" : "") + date;
+        dateStr += (month < 10 ? "/0" : "/") + month;
+        dateStr += "/" + year;
+        document.clock.date.value = dateStr;
+        Timer = setTimeout("clock()", 1000);
+      }
+    </script>
+  </head>
+  <body onLoad="clock()">
+    <form name="clock">
+      Час:
+      <input class="form" type="text" name="time" size="6" value="" /><br />
+      Дата:
+      <input class="form" type="text" name="date" size="6" value="" />
+    </form>
+  </body>
+</html>
