@@ -1,32 +1,24 @@
 body {
-  font-size: 50px;
-  font-family: "Anonymous Pro", monospace;
-  background-color: #212121;
-  color: aliceblue;
-  display: flex;
-  justify-content: center;
-  margin: 200px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+h2 {
+  font-size: 40px;
 }
 a {
-  text-decoration: none;
-  color: aliceblue;
+  font-size: 30px;
+  color: black;
+  font-weight: 800;
 }
-button {
-  cursor: pointer;
-  width: 540px;
-  height: 150px;
-  margin: 30px;
-  font-size: 50px;
-  font-family: "Anonymous Pro", monospace;
-  background-color: #303030;
-  color: aliceblue;
-  text-decoration: none;
+p {
+  font-size: 20px;
+  color: black;
+  font-weight: 300;
 }
-button:hover {
-  background-color: #555555;
-}
-.form {
-  font-size: 50px;
-  background-color: #424242;
-  color: aliceblue;
+div {
+  display: block;
+  margin: auto;
+  font-size: 20px;
+  color: rgb(12, 53, 235);
+  font-weight: 800;
 }
