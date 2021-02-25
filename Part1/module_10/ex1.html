@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex1</title>
+  </head>
+  <body>
+    <div class="textbox">
+      <div class="selector">
+        Choose the photo of car
+        <select onchange="selector(this)" name="Photo">
+          <option value="audi">Audi</option>
+          <option value="bentley">Bentley</option>
+          <option value="bmw">BMW</option>
+          <option value="chevrolet">Chevrolet</option>
+          <option value="dodge">Dodge</option>
+          <option value="mclaren">Mclaren</option>
+          <option value="porcshe">Porcshe</option>
+          <option value="pagani">Pagani</option>
+        </select>
+      </div>
+    </div>
+    <img name="img" src="img/audi.jpg" width="1280" height="720" alt="Audi car" />
+
+    <script>
+      var photo = new Array();
+      photo["audi"] = new Image();
+      photo["audi"].src = "img/audi.jpg";
+      photo["bmw"] = new Image();
+      photo["bmw"].src = "img/bmw.jpg";
+      photo["bentley"] = new Image();
+      photo["bentley"].src = "img/bentley.jpg";
+      photo["chevrolet"] = new Image();
+      photo["chevrolet"].src = "img/chevrolet.jpg";
+      photo["dodge"] = new Image();
+      photo["dodge"].src = "img/dodge.jpg";
+      photo["mclaren"] = new Image();
+      photo["mclaren"].src = "img/mclaren.jpg";
+      photo["porcshe"] = new Image();
+      photo["porcshe"].src = "img/porcshe.jpg";
+      photo["pagani"] = new Image();
+      photo["pagani"].src = "img/pagani.jpg";
+
+      function selector(list) {
+        d = list.options[list.selectedIndex].value;
+        document.img.src = photo[d].src;
+      }
+    </script>
+
+    <style>
+      body {
+        margin: 0;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        background-color: #0d0d0d;
+      }
+      select {
+        font-size: 30px;
+        width: 150px;
+        font-weight: 500;
+      }
+      .selector {
+        transition: 1s;
+        color: #f2f2f2;
+        margin: auto;
+      }
+      .textbox {
+        background-color: #262626;
+        display: flex;
+        width: 100%;
+        height: 100px;
+      }
+    </style>
+  </body>
+</html>

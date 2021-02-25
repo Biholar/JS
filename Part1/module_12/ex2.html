@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content-container">
+      <div class="conent">
+        <h2>Accounting for the receipt of goods</h2>
+
+        <h2>Price and quantity change</h2>
+
+        <p>Pick Goods</p>
+        <select name="goods_pick">
+          <option value="desk">Desk</option>
+          <option value="Sofa">Sofa</option>
+          <option value="chair">Chair</option>
+          <option value="Closet">Closet</option>
+          <option value="Bed">Bed</option>
+        </select>
+
+        <p>Price<input type="text" name="price" /></p>
+
+        <p>Amount <input type="text" name="amount" /></p>
+
+        <input class="button" type="submit" value="Submit" onclick="table_change()" />
+      </div>
+    </div>
+    <div class="table-content-container">
+      <div class="table-conent">
+        <table border="1" cellpadding="5" id="table">
+          <tr>
+            <th>Product name</th>
+            <th>price per unit</th>
+            <th>number</th>
+            <th>price</th>
+          </tr>
+          <tr>
+            <td>Desk</td>
+            <td>3500</td>
+            <td>10</td>
+            <td>35000</td>
+          </tr>
+          <tr>
+            <td>Sofa</td>
+            <td>4000</td>
+            <td>5</td>
+            <td>20000</td>
+          </tr>
+          <tr>
+            <td>Chair</td>
+            <td>3000</td>
+            <td>20</td>
+            <td>60000</td>
+          </tr>
+          <tr>
+            <td>Closet</td>
+            <td>9000</td>
+            <td>5</td>
+            <td>45000</td>
+          </tr>
+          <tr>
+            <td>Bed</td>
+            <td>12000</td>
+            <td>5</td>
+            <td>108000</td>
+          </tr>
+          <tr class="summary">
+            <td colspan="3">Summary</td>
+            <td>268 000</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function table_change() {
+        var price = parseFloat(document.all.price.value);
+        var amount = parseFloat(document.all.amount.value);
+        var a = document.all.goods_pick.selectedIndex;
+        var d = document.all.goods_pick.options[a].value;
+        switch (d) {
+          case "desk":
+            document.all.table.rows[1].cells[1].innerHTML = price;
+            document.all.table.rows[1].cells[2].innerHTML = amount;
+            document.all.table.rows[1].cells[3].innerHTML = price * amount;
+            break;
+          case "Sofa":
+            document.all.table.rows[2].cells[1].innerHTML = price;
+            document.all.table.rows[2].cells[2].innerHTML = amount;
+            document.all.table.rows[2].cells[3].innerHTML = price * amount;
+            break;
+          case "chair":
+            document.all.table.rows[3].cells[1].innerHTML = price;
+            document.all.table.rows[3].cells[2].innerHTML = amount;
+            document.all.table.rows[3].cells[3].innerHTML = price * amount;
+            break;
+          case "Closet":
+            document.all.table.rows[4].cells[1].innerHTML = price;
+            document.all.table.rows[4].cells[2].innerHTML = amount;
+            document.all.table.rows[4].cells[3].innerHTML = price * amount;
+            break;
+          case "Bed":
+            document.all.table.rows[5].cells[1].innerHTML = price;
+            document.all.table.rows[5].cells[2].innerHTML = amount;
+            document.all.table.rows[5].cells[3].innerHTML = price * amount;
+            break;
+        }
+        var result = 0;
+        for (let i = 1; i <= 4; i++) {
+          result += parseFloat(document.all.table.rows[i].cells[3].firstChild.nodeValue);
+        }
+        document.all.table.rows[5].cells[1].innerHTML = result;
+      }
+
+      function st1(price) {
+        start1 = document.all.price.value;
+        for (i = 0; i < start1.length; i++) {
+          per = start1.charAt(i);
+          if ((per < "0" || per > "9") && !(per == "," || per == ".")) {
+            alert("Not a number. Angle should be more than 0 and less than 90 deg\n");
+            price.focus();
+            price.select();
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function st2(amount) {
+        kilk1 = document.all.amount.value;
+        for (i = 0; i < kilk1.length; i++) {
+          per = kilk1.charAt(i);
+          if ((per < "0" || per > "9") && !(per == "," || per == ".")) {
+            alert("Not a number. Angle should be more than 0 and less than 90 deg\n");
+            amount.focus();
+            amount.select();
+            return false;
+          }
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex2</title>
+  </head>
+  <body>
+    <div class="content-container">
+      <h1>Construction of an ellipse</h1>
+      <p>Set the lengths of the axles</p>
+      <p>Horizontal a = <input type="text" name="horA" /></p>
+      <p>Vertical b = <input type="text" name="verB" /></p>
+
+      <div class="select-box">
+        Choose a construction method:
+        <select name="method" id="">
+          <option value="method1">The first method</option>
+          <option value="method2">The second method</option>
+          <option value="method3">The third method</option>
+        </select>
+      </div>
+
+      <br />
+      <input class="button" onclick="Build()" type="submit" value="Build" />
+
+      <div class="canvas">
+        <div class="hor"></div>
+        <div class="ver"></div>
+        <div id="Elips"></div>
+      </div>
+    </div>
+    <script>
+      function Build() {
+        a = document.all.horA.value;
+        b = document.all.verB.value;
+        id = document.all.method.selectedIndex;
+        mtd = document.all.method.options[id].value;
+
+        switch (mtd) {
+          case "method1":
+            function elipse(x1, a, b) {
+              t = Math.PI;
+              x = a * Math.cos(t);
+              y = b * Math.sin(t);
+              var xstr = "";
+              var xstr0 =
+                '<div style="position: absolute;width:2px;height:2px;background-color: black;';
+              while (x1 >= 0) {
+                x = a * Math.cos(x1) + 98;
+                y = b * Math.sin(x1) + 98;
+                xstr += xstr0 + "top: " + y + "px;left: " + x + 'px;"></div>';
+                x1--;
+              }
+              document.all.Elips.innerHTML = xstr;
+            }
+            elipse(1200, a / 2, b / 2);
+            break;
+          case "method2":
+            str =
+              '<svg height="200" width="200"\>\
+                        <ellipse cx ="100" cy="100" rx="' +
+              a / 2 +
+              '" ry ="' +
+              b / 2 +
+              '"\
+                    style ="fill:none;;stroke:black;stroke-width:2" \>\ </svg > ';
+            document.all.Elips.innerHTML = str;
+            break;
+          case "method3":
+            str = '<canvas id="canvas" width="200" height="200"></canvas>';
+            document.all.Elips.innerHTML = str;
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.ellipse(100, 100, a / 2, b / 2, Math.PI, 0, 2 * Math.PI);
+            ctx.stroke();
+            break;
+        }
+      }
+    </script>
+
+    <style>
+      .ver {
+        height: 200px;
+        width: 3px;
+        background-color: black;
+        position: absolute;
+        left: 97px;
+      }
+      .content-container {
+        width: 70%;
+        margin: auto;
+      }
+
+      .hor {
+        height: 3px;
+        width: 200px;
+        background-color: black;
+        position: absolute;
+        top: 97px;
+      }
+
+      .canvas {
+        background-color: #53a69d;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        left: 1200px;
+        top: 120px;
+      }
+
+      body {
+        margin: 0;
+        color: #f2f2f2;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        background-color: #0d0d0d;
+      }
+      input {
+        font-size: 30px;
+        width: 50px;
+      }
+
+      .button {
+        color: #0d0d0d;
+        border: solid 1px #f2f2f2;
+        outline: 0px;
+        background-color: #65dbd0;
+        width: 150px;
+      }
+
+      .button:hover {
+        color: #65dbd0;
+        background-color: #0d0d0d;
+        cursor: pointer;
+      }
+
+      select {
+        font-size: 30px;
+        width: 290px;
+      }
+
+      h1 {
+        color: #f2f2f2;
+      }
+    </style>
+  </body>
+</html>

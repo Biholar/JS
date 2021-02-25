@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex2</title>
+  </head>
+  <body onload="init()">
+    <h2>Move the square with the mouse</h2>
+    <h3>
+      Place the cursor inside the blue square, left-click and drag the square.
+      <br />
+      Release the square to release the square.
+    </h3>
+    <p>Note. MOVE SLOW</p>
+    <div class="canvas" id="div">
+      <div class="square" id="square"></div>
+    </div>
+  </body>
+
+  <script>
+    flag = false;
+    function init() {
+      document.getElementById("square").onmousemove = dragIt;
+      document.getElementById("square").onmouseup = osvobodi;
+      document.getElementById("square").onmousedown = zahvat;
+    }
+
+    function dragIt(evt) {
+      event = evt ? evt : window.event ? window.event : "";
+      if (flag) {
+        console.log("y = " + event.clientY);
+        console.log("x = " + event.clientX);
+        if (
+          event.clientX >= 745 &&
+          event.clientX <= 1195 &&
+          event.clientY >= 325 &&
+          event.clientY <= 775
+        ) {
+          document.getElementById("square").style.top = event.clientY - 325 + "px";
+          document.getElementById("square").style.left = event.clientX - 745 + "px";
+        }
+      }
+    }
+    function osvobodi() {
+      flag = false;
+    }
+    function zahvat() {
+      flag = true;
+    }
+  </script>
+
+  <style>
+    body {
+      width: 80vw;
+      margin: 0 auto;
+      color: #f2f2f2;
+      font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      background-color: #0d0d0d;
+    }
+    h2 {
+      font-size: 40px;
+      margin: 10px auto;
+      text-align: center;
+      color: #65dbd0;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .canvas {
+      width: 500px;
+      height: 500px;
+      background-color: #262626;
+      position: absolute;
+      top: 300px;
+      left: 720px;
+    }
+
+    .square {
+      position: relative;
+      left: 30;
+      top: 30;
+      width: 70;
+      height: 70;
+      background-color: #53a69d;
+    }
+  </style>
+</html>

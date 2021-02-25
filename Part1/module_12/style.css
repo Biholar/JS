@@ -1,4 +1,5 @@
 body {
+  text-align: center;
   background-color: #8c5f4f;
 }
 
@@ -59,6 +60,13 @@ p {
   border: 3px solid black;
   padding: 10px;
 }
+.table-content-container {
+  background-color: #f2cd5c;
+  margin: auto;
+  width: 45vw;
+  border: 3px solid black;
+  padding: 10px;
+}
 
 button {
   display: block;
@@ -72,4 +80,31 @@ button {
 button:hover {
   cursor: pointer;
   background-color: #f2e641;
+}
+
+.button {
+  display: block;
+  margin: auto;
+  width: 50%;
+  border: 1px solid #212121;
+  outline: 0px;
+  background-color: #f29441;
+  font-size: 30px;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #f2e641;
+}
+table {
+  margin: auto;
+}
+
+table,td,tr {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  border: solid 2px black;
+}
+
+.summary{
+  background-color:#f29441;
 }

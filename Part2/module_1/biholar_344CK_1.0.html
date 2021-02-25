@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Work</title>
+  </head>
+  <body>
+    <script>
+      prompt("Enter your number:")
+      var str = "123456";
+      console.log(str.substr(-4) + str[0] + str[1]);
+
+      function getRandomInt() {
+            min = Math.ceil(1);
+            max = Math.floor(11);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        var i, j;
+        document.write("<table>")
+        for (i = 2; i <= 10; i++) {
+            document.write("<tr>");
+            for (j = 2; j < 10; j++) {
+                document.write("<td>" + (i * j) * getRandomInt() + "</td>")
+            }
+            document.write("</tr>")
+        }
+        document.write("</table>")
+
+      alert("Гра, угадай число, ready?");
+        let a = false,
+            b = 50,
+            c = 25;
+            end = false;
+
+        while (!end) {
+            if (confirm("Ваше число" + b + "? (Окей - Да, Отменить - Нет)")) {
+                alert("Ваше число " + b);
+                a = true;
+                end = true;
+            } else if (confirm("Ваше число > " + b + "? (Окей - Да, Отменить - Нет)")) {
+                b = Math.round(b + c);
+                c = c / 2;
+            } else {
+                b = Math.round(b - c);
+                c = c / 2;
+            }
+        }
+    </script>
+  </body>
+</html>
