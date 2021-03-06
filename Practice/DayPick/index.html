@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button id="1" onclick="alert('click event occured 1')">1</button>
+		<button id="2" onclick="alert('click event occured 2')">2</button>
+		<button id="3" onclick="alert('click event occured 3')">3</button>
+		<button id="4" onclick="alert('click event occured 4')">4</button>
+		<button id="5" onclick="alert('click event occured 5')">5</button>
+
+		<script>
+			var d = new Date();
+			var dayweek = d.getDay();
+			console.log(dayweek);
+
+			switch (dayweek) {
+				case 1:
+					document.getElementById("1").click();
+					brake;
+				case 2:
+					document.getElementById("2").click();
+					brake;
+				case 3:
+					document.getElementById("3").click();
+					brake;
+				case 4:
+					document.getElementById("4").click();
+					brake;
+				case 5:
+					document.getElementById("5").click();
+					brake;
+				default:
+					document.getElementById("1").click();
+					brake;
+			}
+		</script>
+	</body>
+</html>
